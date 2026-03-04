@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>forsexweek | Bio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --arka-plan: #0a0a0a;
+            --koyu-kirmizi: #8b0000;
+            --canli-kirmizi: #d60000;
+            --kart-bg: #1a1a1a;
+            --metin-ana: #ffffff;
+            --metin-alt: #b3b3b3;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--arka-plan);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh; overflow-x: hidden;
+            color: var(--metin-ana);
+        }
+
+        /* --- ARKA PLAN LALELER (Koyu Kırmızı/Siyah Uyumlu) --- */
+        #lale-sahnesi {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 1;
+        }
+
+        /* --- PROFİL --- */
+        .profil {
+            margin-top: 50px; z-index: 10; text-align: center;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .emoji-avatar {
+            font-size: 80px;
+            display: inline-block;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px var(--koyu-kirmizi));
+        }
+
+        h1 { 
+            font-size: 1.8rem; margin: 0; letter-spacing: 3px; 
+            color: var(--canli-kirmizi); text-transform: lowercase; font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .sub { font-size: 0.9rem; color: var(--metin-alt); margin-top: 5px; font-weight: 500; }
+
+        /* --- BUTONLAR --- */
+        .linkler {
+            width: 90%; max-width: 380px; z-index: 10;
+            display: flex; flex-direction: column; gap: 15px; margin-top: 35px;
+        }
+
+        .buton {
+            background: var(--kart-bg);
+            padding: 18px; border-radius: 12px;
+            text-decoration: none; color: var(--metin-ana);
+            font-weight: 600; transition: 0.4s;
+            display: flex; align-items: center; justify-content: flex-start;
+            padding-left: 25px; gap: 15px;
+            border: 1px solid #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .buton i { font-size: 1.3rem; width: 25px; text-align: center; color: var(--canli-kirmizi); }
+        
+        .buton:hover {
+            border-color: var(--canli-kirmizi);
+            background: #222;
+            transform: translateY(-2px);
+        }
+
+        .buton:active { transform: scale(0.95); }
+
+        /* --- SPOTIFY --- */
+        .spotify-frame {
+            width: 90%; max-width: 380px; margin-top: 30px;
+            border-radius: 15px; overflow: hidden;
+            z-index: 10; border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* LALE YAĞMURU (Koyu kırmızı gölgeli beyaz laleler) */
+        .tek-lale {
+            position: absolute; font-size: 22px;
+            animation: dusme linear infinite;
+            filter: grayscale(0.5) sepia(1) hue-rotate(-50deg) saturate(3); /* Laleleri kırmızımsı yapar */
+        }
+        @keyframes dusme { to { transform: translateY(110vh) rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <div id="lale-sahnesi"></div>
+
+    <div class="profil">
+        <div class="emoji-avatar">😆</div>
+        <h1>forsexweek</h1>
+        <div class="sub">ulasmak istiyosan once konuscan benim menejerle</div>
+    </div>
+
+    <div class="linkler">
+        <a href="https://instagram.com/kiminleysen" target="_blank" class="buton">
+            <i class="fa-brands fa-instagram"></i>
+            <span>İnstagram</span>
+        </a>
+        
+        <a href="https://tiktok.com/@4sxw.inc" target="_blank" class="buton">
+            <i class="fa-brands fa-tiktok"></i>
+            <span>Tiktok</span>
+        </a>
+
+        <a href="https://www.roblox.com/users/keremerbayytbr/profile" target="_blank" class="buton">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Roblox </span>
+        </a>
+
+        <a href="https://open.spotify.com/user/31ao5hzmkqhwz7r5c2vvdka6rlvy?si=9NQdP4pUR1yhH5_zQIrrKg" target="_blank" class="buton">
+            <i class="fa-brands fa-spotify"></i>
+            <span>Spotify Profile</span>
+        </a>
+    </div>
+
+
+    <div style="margin: 50px; z-index: 10; font-size: 0.8rem; opacity: 0.6; font-weight: bold; letter-spacing: 2px; color: var(--canli-kirmizi);">
+        FORSEXWEEK // 2026
+    </div>
+
+    <script>
+        function laleYarat() {
+            const sahne = document.getElementById('lale-sahnesi');
+            const lale = document.createElement('div');
+            lale.className = 'tek-lale';
+            lale.innerHTML = '⚓';
+            lale.style.left = Math.random() * 100 + "vw";
+            lale.style.top = "-50px";
+            lale.style.opacity = Math.random() * 0.3 + 0.1;
+            lale.style.animationDuration = (Math.random() * 4 + 5) + "s";
+            sahne.appendChild(lale);
+            setTimeout(() => lale.remove(), 8000);
+        }
+        setInterval(laleYarat, 500);
+    </script>
+</body>
+</html>
